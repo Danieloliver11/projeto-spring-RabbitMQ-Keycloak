@@ -1,12 +1,17 @@
 package io.github.danieloliveira11.avaliadorcredito.controller;
 
 import org.springframework.cloud.openfeign.EnableFeignClients;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import io.github.danieloliveira11.avaliadorcredito.model.exception.RetornoNotFoundException;
+import io.github.danieloliveira11.avaliadorcredito.model.vo.DadosAvaliacaoRetornoVO;
+import io.github.danieloliveira11.avaliadorcredito.model.vo.DadosAvaliacaoVO;
 import io.github.danieloliveira11.avaliadorcredito.model.vo.SituacaoClienteVO;
 import io.github.danieloliveira11.avaliadorcredito.service.AvaliadorCreditoService;
 import lombok.RequiredArgsConstructor;
@@ -29,5 +34,12 @@ public class AvaliadorCreditoController {
 		return avaliadorCreditoService.consultaSituacaoCliente(cpf);
 		
 	}
+	
+	@PostMapping
+	public ResponseEntity<DadosAvaliacaoRetornoVO> realizarAvaliazaco(@RequestBody DadosAvaliacaoVO dados) throws RetornoNotFoundException{
+		return ResponseEntity.ok(avaliadorCreditoService.realizarAvaliazaco(dados));
+		
+	}
+
 
 }

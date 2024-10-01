@@ -6,6 +6,7 @@ import lombok.Builder;
 
 @Builder
 public record ClienteCartaoClientVO(
+		Long id,
 		String nome,
 	    String bandeira,
 	    BigDecimal limiteBasico,

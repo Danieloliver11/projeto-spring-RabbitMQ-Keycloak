@@ -21,6 +21,7 @@ public class Cartaofactory {
 	public static CartaoVO converterParaVO(CartaoEntity cartaoEntity) {
 		if(cartaoEntity != null) {
 			return CartaoVO.builder()
+					.id(cartaoEntity.getId())
 					.bandeira(cartaoEntity.getBandeira())
 					.limiteBasico(cartaoEntity.getLimiteBasico())
 					.nome(cartaoEntity.getNome())

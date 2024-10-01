@@ -1,4 +1,4 @@
-package io.github.danieloliveira11.avaliadorcredito.infra.clients;
+package io.github.danieloliveira11.avaliadorcredito.infra.clients.mscliente;
 
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.ResponseEntity;

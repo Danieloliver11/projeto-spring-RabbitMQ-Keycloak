@@ -1,4 +1,4 @@
-package io.github.danieloliveira11.avaliadorcredito.infra.clients;
+package io.github.danieloliveira11.avaliadorcredito.infra.clients.mscartoes;
 
 import java.util.List;
 
