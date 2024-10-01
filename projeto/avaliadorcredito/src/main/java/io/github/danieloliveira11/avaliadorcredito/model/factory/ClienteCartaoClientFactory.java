@@ -7,7 +7,11 @@ import io.github.danieloliveira11.avaliadorcredito.model.client.ClienteCartaoCli
 public class ClienteCartaoClientFactory {
 
 	public static List<ClienteCartaoClientVO> converterlist(List<ClienteCartaoClientVO> clienteCartoeList) {
-		return clienteCartoeList.stream().map(ClienteCartaoClientFactory::converter).toList();
+		if (clienteCartoeList != null) {
+			return clienteCartoeList.stream().map(ClienteCartaoClientFactory::converter).toList();
+		}
+		
+		return null;
 	}
 	
 	public static ClienteCartaoClientVO converter(ClienteCartaoClientVO clienteCartao) {

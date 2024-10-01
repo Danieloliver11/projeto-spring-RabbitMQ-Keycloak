@@ -7,7 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import feign.FeignException;
-import io.github.danieloliveira11.avaliadorcredito.infra.clients.CartoesClient;
+import io.github.danieloliveira11.avaliadorcredito.infra.clients.ClienteCartoesClient;
 import io.github.danieloliveira11.avaliadorcredito.infra.clients.ClienteClient;
 import io.github.danieloliveira11.avaliadorcredito.model.client.ClienteCartaoClientVO;
 import io.github.danieloliveira11.avaliadorcredito.model.client.ClienteClientVO;
@@ -22,7 +22,7 @@ import lombok.RequiredArgsConstructor;
 public class AvaliadorCreditoService {
 	
 	private final ClienteClient clienteClient;
-	private final CartoesClient clienteCartoesClient;
+	private final ClienteCartoesClient clienteCartoesClient;
 
 	
 	public SituacaoClienteVO consultaSituacaoCliente(String cpf) throws RetornoNotFoundException {
