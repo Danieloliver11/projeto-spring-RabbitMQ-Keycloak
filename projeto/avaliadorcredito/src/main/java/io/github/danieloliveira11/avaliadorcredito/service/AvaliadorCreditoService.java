@@ -95,6 +95,7 @@ public class AvaliadorCreditoService {
 			BigDecimal limiteBasico = cartao.limiteBasico();
 			BigDecimal idadeBD = BigDecimal.valueOf(clienteResponse.idade());
 			BigDecimal fator = idadeBD.divide(BigDecimal.valueOf(10));
+			
 			BigDecimal limiteAprovado = fator.multiply(limiteBasico);
 			
 			return CartaoAprovadoVO.builder()

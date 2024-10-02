@@ -53,6 +53,14 @@
 			<version>2.0.2</version>
 		</dependency>
 
+		<!-- para trabalhar com protocolo AMPQ para fila -->
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-amqp</artifactId>
+		</dependency>
+		 
+
 		<dependency>
 			<groupId>com.mysql</groupId>
 			<artifactId>mysql-connector-j</artifactId>
