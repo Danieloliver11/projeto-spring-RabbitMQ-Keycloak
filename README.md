@@ -3,5 +3,5 @@
 ![image](https://github.com/user-attachments/assets/854732f0-ea48-4f44-938a-24de4a425001)
 <H4></H4> 
 <H4>Comando para gerar o conteiner docker para o Keycloak</H4>
-docker run -p --name Keycloak 8081:8080 -e KC_BOOTSTRAP_ADMIN_USERNAME=admin -e KC_BOOTSTRAP_ADMIN_PASSWORD=admin quay.io/keycloak/keycloak:26.0.0 start-dev
+docker run --name Keycloak -p 8081:8080 -e KC_BOOTSTRAP_ADMIN_USERNAME=admin -e KC_BOOTSTRAP_ADMIN_PASSWORD=admin quay.io/keycloak/keycloak:26.0.0 start-dev
 
