@@ -6,6 +6,7 @@ import lombok.Builder;
 
 @Builder
 public record CartaoAprovadoVO(
+		Long idCartao,
 		String cartao,
 		String bandeira,
 		BigDecimal limiteAprovado) {
