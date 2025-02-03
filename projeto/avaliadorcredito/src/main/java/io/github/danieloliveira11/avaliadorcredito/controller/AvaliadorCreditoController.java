@@ -10,8 +10,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import io.github.danieloliveira11.avaliadorcredito.model.exception.RetornoNotFoundException;
+import io.github.danieloliveira11.avaliadorcredito.model.queue.SolicitacaoEmissaoCartaoVO;
 import io.github.danieloliveira11.avaliadorcredito.model.vo.DadosAvaliacaoRetornoVO;
 import io.github.danieloliveira11.avaliadorcredito.model.vo.DadosAvaliacaoVO;
+import io.github.danieloliveira11.avaliadorcredito.model.vo.ProtocoloSolicitacaoCartao;
 import io.github.danieloliveira11.avaliadorcredito.model.vo.SituacaoClienteVO;
 import io.github.danieloliveira11.avaliadorcredito.service.AvaliadorCreditoService;
 import lombok.RequiredArgsConstructor;
@@ -39,6 +41,11 @@ public class AvaliadorCreditoController {
 	public ResponseEntity<DadosAvaliacaoRetornoVO> realizarAvaliazaco(@RequestBody DadosAvaliacaoVO dados) throws RetornoNotFoundException{
 		return ResponseEntity.ok(avaliadorCreditoService.realizarAvaliazaco(dados));
 		
+	}
+	
+	@PostMapping("/solicitacoes-cartoes")
+	public ResponseEntity<ProtocoloSolicitacaoCartao> solicitarCartao(@RequestBody SolicitacaoEmissaoCartaoVO vo){
+		return ResponseEntity.ok(avaliadorCreditoService.solicitarCartao(vo));
 	}
 
 
